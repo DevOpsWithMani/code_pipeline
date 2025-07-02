@@ -11,10 +11,9 @@ hooks:
       runas: root
       command: |
         rm -rf /var/www/html/*
-        # Ensure directory exists
         mkdir -p /var/www/html
   ApplicationStart:
-    - location: scripts/start_server.sh
+    - location: inline
       timeout: 300
       runas: root
       command: |
